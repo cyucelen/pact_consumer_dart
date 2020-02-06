@@ -84,3 +84,5 @@ pubspec.lock
 # Ignore directories used during contract tests
 /tmp
 /pacts
+
+.dart_tool
