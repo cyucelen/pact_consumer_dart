@@ -1,4 +1,4 @@
-// Copyright 2015 Workiva Inc.
+// Copyright 2020 Çağatay Yücelen
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -18,7 +18,6 @@ import 'package:http/http.dart' as http;
 
 /// Encapsulates the requests made by [PactMockService] client in order to leverage the Pact Service.
 class PactMockServiceRequests {
-   
   static final Map<String, String> _headers = {
     'X-Pact-Mock-Service': 'true',
     'Content-Type': 'application/json'

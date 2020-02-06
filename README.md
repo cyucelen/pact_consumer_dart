@@ -1,12 +1,7 @@
-# pact_consumer_dart
+# Dart Pact Consumer Library
 
-[![Pub](https://img.shields.io/pub/v/pact_consumer_dart.svg)](https://pub.dartlang.org/packages/pact_consumer_dart)
-[![documentation](https://img.shields.io/badge/Documentation-pact_consumer_dart-blue.svg)](https://www.dartdocs.org/documentation/pact_consumer_dart/latest/)
-[![Build Status](https://travis-ci.org/thomaslevans-wf/pact_consumer_dart.svg?branch=master)](https://travis-ci.org/thomaslevans-wf/pact_consumer_dart)
-[![codecov](https://codecov.io/gh/thomaslevans-wf/pact_consumer_dart/branch/master/graph/badge.svg)](https://codecov.io/gh/thomaslevans-wf/pact_consumer_dart)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+Since [thomaslewans-wf/pact_consumer_dart](https://github.com/thomaslevans-wf/pact_consumer_dart) is abondoned, I will continue to develop this project under this repository.
 
-Dart Pact Consumer Library
 An implementation of the Pact Consumer library for Dart. A 'How to Contribute' section will be up soon with specific guidelines on contributing. Feel free to open issues for any bugs or features requests.
 
 ## [The Pact Gem](https://github.com/bethesque/pact-mock_service)
@@ -93,8 +88,3 @@ This will write out all verified interactions as JSON, which will appear in the 
 ## Flexible Matching
 pact_consumer_dart supports [Flexible Matching](http://docs.pact.io/documentation/matching.html) according to the Pact Specification 2.0.0, read the specification docs provided by Pact for deeper understanding and usage.
 
-
-## Notes and Helpful Links
-pact_consumer_dart leverages w_transport in order to be platform agnostic. This means that this library can be used to write contract tests, regardless if the Consumer is client or server. This benefit does not come without added configuration. Thus when using pact_consumer_dart it is necessary to configure w_transport for the given consumer's platform.
-- [Pact.io](http://docs.pact.io/)
-- [w_transport](https://www.dartdocs.org/documentation/w_transport/2.9.2/index.html)

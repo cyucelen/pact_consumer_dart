@@ -1,4 +1,4 @@
-// Copyright 2015 Workiva Inc.
+// Copyright 2020 Çağatay Yücelen
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -100,14 +100,16 @@ class PactMockService {
         await await PactMockServiceRequests.getVerification(_baseUrl);
 
     if (verify.statusCode != 200) {
-      throw new Exception('Verificaiton Request failed with status code: ${verify.statusCode.toString()}');
+      throw new Exception(
+          'Verificaiton Request failed with status code: ${verify.statusCode.toString()}');
     }
 
     Response write =
         await PactMockServiceRequests.postPact(_pactDetails, _baseUrl);
 
     if (write.statusCode != 200) {
-      throw new Exception('Pact file generation failed with status code: ${write.statusCode.toString()}');
+      throw new Exception(
+          'Pact file generation failed with status code: ${write.statusCode.toString()}');
     }
   }
 }
