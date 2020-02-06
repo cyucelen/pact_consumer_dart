@@ -100,14 +100,14 @@ class PactMockService {
         await await PactMockServiceRequests.getVerification(_baseUrl);
 
     if (verify.statusCode != 200) {
-      throw new Exception(verify.statusCode.toString());
+      throw new Exception('Verificaiton Request failed with status code: ${verify.statusCode.toString()}');
     }
 
     Response write =
         await PactMockServiceRequests.postPact(_pactDetails, _baseUrl);
 
     if (write.statusCode != 200) {
-      throw new Exception(write.statusCode.toString());
+      throw new Exception('Pact file generation failed with status code: ${write.statusCode.toString()}');
     }
   }
 }

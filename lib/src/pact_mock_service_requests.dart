@@ -18,7 +18,8 @@ import 'package:http/http.dart' as http;
 
 /// Encapsulates the requests made by [PactMockService] client in order to leverage the Pact Service.
 class PactMockServiceRequests {
-  static Map _headers = {
+   
+  static final Map<String, String> _headers = {
     'X-Pact-Mock-Service': 'true',
     'Content-Type': 'application/json'
   };
