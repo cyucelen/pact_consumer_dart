@@ -14,7 +14,7 @@
 
 import 'dart:async';
 import 'dart:convert';
-import 'package:w_transport/w_transport.dart';
+import 'package:http/http.dart' as http;
 
 /// Encapsulates the requests made by [PactMockService] client in order to leverage the Pact Service.
 class PactMockServiceRequests {
@@ -26,24 +26,24 @@ class PactMockServiceRequests {
   /// GETs the verification that all interactions have been exercised.
   static Future getVerification(String baseUrl) async {
     Uri uri = Uri.parse(baseUrl + '/interactions/verification');
-    return Http.get(uri, headers: _headers);
+    return http.get(uri, headers: _headers);
   }
 
   /// POSTs an interaction to the Pact Service, setting it up for Contract Testing.
   static Future postInteraction(Map interaction, String baseUrl) async {
     Uri uri = Uri.parse(baseUrl + '/interactions');
-    return Http.post(uri, body: json.encode(interaction), headers: _headers);
+    return http.post(uri, body: json.encode(interaction), headers: _headers);
   }
 
   /// POSTs the details of the pact to the Pact Service for generating the Pact File.
   static Future postPact(dynamic pactDetails, String baseUrl) async {
     Uri uri = Uri.parse(baseUrl + '/pact');
-    return Http.post(uri, body: json.encode(pactDetails), headers: _headers);
+    return http.post(uri, body: json.encode(pactDetails), headers: _headers);
   }
 
   /// DELETEs all interactions from the Pact Service.
   static Future deleteSession(String baseUrl) async {
     Uri uri = Uri.parse(baseUrl + '/interactions');
-    return Http.delete(uri, headers: _headers);
+    return http.delete(uri, headers: _headers);
   }
 }

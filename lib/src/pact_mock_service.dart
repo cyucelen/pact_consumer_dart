@@ -13,7 +13,7 @@
 // limitations under the License.
 
 import 'dart:async';
-import 'package:w_transport/w_transport.dart';
+import 'package:http/http.dart';
 
 import 'package:pact_consumer_dart/src/pact_interaction.dart';
 import 'package:pact_consumer_dart/src/pact_mock_service_requests.dart';
@@ -48,8 +48,8 @@ class PactMockService {
     // throw the error if it occurs
     Response res = await PactMockServiceRequests.deleteSession(_baseUrl);
 
-    if (res.status != 200) {
-      throw new Exception(res.statusText);
+    if (res.statusCode != 200) {
+      throw new Exception(res.statusCode.toString());
     }
   }
 
@@ -82,8 +82,8 @@ class PactMockService {
       Response res = await PactMockServiceRequests.postInteraction(
           interaction.toMap(), _baseUrl);
 
-      if (res.status != 200) {
-        throw new StateError(res.statusText);
+      if (res.statusCode != 200) {
+        throw new StateError(res.statusCode.toString());
       }
     }
     _interactions.clear();
@@ -99,15 +99,15 @@ class PactMockService {
     Response verify =
         await await PactMockServiceRequests.getVerification(_baseUrl);
 
-    if (verify.status != 200) {
-      throw new Exception(verify.statusText);
+    if (verify.statusCode != 200) {
+      throw new Exception(verify.statusCode.toString());
     }
 
     Response write =
         await PactMockServiceRequests.postPact(_pactDetails, _baseUrl);
 
-    if (write.status != 200) {
-      throw new Exception(write.statusText);
+    if (write.statusCode != 200) {
+      throw new Exception(write.statusCode.toString());
     }
   }
 }
